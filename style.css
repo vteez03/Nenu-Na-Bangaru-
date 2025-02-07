@@ -1,0 +1,77 @@
+/* Ensure body takes the full viewport height and centers content */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    background-color: #fde2e4; /* Soft pink */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Center the main container */
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Center the heading */
+.header_text {
+    font-size: 2.5em;
+    color: #d81b60; /* Cute pink color */
+    margin-bottom: 20px;
+}
+
+/* Style for the GIF container */
+.gif_container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Buttons container */
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Button styles */
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+/* Yes Button */
+#yesButton {
+    background-color: #ba68c8; /* Light purple */
+    color: white;
+}
+
+/* No Button */
+#noButton {
+    background-color: #f48fb1; /* Light pink */
+    color: white;
+}
+
+/* No button grows smoothly */
+#noButton:hover {
+    transform: scale(1.1);
+}
+body {
+    background: url('background.gif') no-repeat center center fixed;
+    background-size: cover;
+}
+body {
+    background-color: #F3F1F3; /* Replace this with the exact color from the GIF */
+}
+
