@@ -1,0 +1,169 @@
+body {
+  background-color: #ffe6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ffd3e0, #ffdde1, #ffe4e6); /* Soft dreamy gradient */
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2); /* Soft pink glow */
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+  animation: softGlow 2s infinite alternate;
+}
+
+h1 {
+  color: #e91e63;
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Adjusts automatically */
+}
+
+.gif {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5); /* Glowing effect */
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.gif_container {
+  position: relative;
+}
+
+.gif_container img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* YES Button */
+#yes-btn {
+  position: relative; /* Needed for ripple effect */
+  background-color: #e91e63;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+  overflow: hidden;
+  transition: font-size 0.3s ease; /* Ensure smooth transition for font size */
+}
+
+#yes-btn:hover {
+  background-color: #c2185b;
+  box-shadow: 0 0 15px #e91e63;
+}
+
+#yes-btn:active::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 105, 180, 0.4);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.4s ease-out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+@keyframes ripple {
+  to { transform: translate(-50%, -50%) scale(4); opacity: 0; }
+}
+
+/* NO Button */
+#no-btn {
+  background-color: #f8bbd0;
+  color: #e91e63;
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.2s ease, left 0.3s ease, top 0.3s ease;
+}
+
+#no-btn:hover {
+  transform: scale(1.1);
+  background-color: #f48fb1;
+}
+
+/* Floating Hearts */
+.heart {
+  position: absolute;
+  color: #ff4081;
+  font-size: 20px;
+  opacity: 0.8;
+  animation: floatUp 4s infinite ease-in-out;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+}
+
+@keyframes softGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(233, 30, 99, 0.4); }
+  50% { box-shadow: 0 0 25px rgba(233, 30, 99, 0.7); }
+}
+
+.floating-heart {
+  will-change: transform;
+}
+
+.pulse {
+  animation: pulse 1s infinite;
+}
